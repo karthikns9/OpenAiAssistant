@@ -22,10 +22,10 @@ namespace OpenAI.Controllers
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
-        public async Task Get(string question)
+        public async Task Get(string question, string apiKey)
         {
             // Best approach would be to load the api key from env vars
-            var aiService = new OpenAiAssistantService("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");
+            var aiService = new OpenAiAssistantService(apiKey);
 
             var assistant = await aiService.GetAssistantById("asst_9J6JPoWQMJtkdjJ42TjgMVEB");
 
