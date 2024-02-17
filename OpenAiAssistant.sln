@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenAiAssistant", "OpenAiAssistant\OpenAiAssistant.csproj", "{53EE30DA-975F-4B08-83C2-ADB2BF2CDC1C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenAiAssistnatWrapper", "OpenAiAssistnatWrapper\OpenAiAssistnatWrapper.csproj", "{A01E84E1-F48E-427C-87F3-0324A574B2DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{53EE30DA-975F-4B08-83C2-ADB2BF2CDC1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53EE30DA-975F-4B08-83C2-ADB2BF2CDC1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53EE30DA-975F-4B08-83C2-ADB2BF2CDC1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A01E84E1-F48E-427C-87F3-0324A574B2DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A01E84E1-F48E-427C-87F3-0324A574B2DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A01E84E1-F48E-427C-87F3-0324A574B2DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A01E84E1-F48E-427C-87F3-0324A574B2DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

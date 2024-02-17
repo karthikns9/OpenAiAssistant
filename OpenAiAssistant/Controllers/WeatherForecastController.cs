@@ -1,6 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
+using OpenAi_Assistant.Models;
+using OpenAi_Assistant.Services;
 
-namespace OpenAiAssistant.Controllers
+
+namespace OpenAI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -19,15 +22,27 @@ namespace OpenAiAssistant.Controllers
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        public async Task Get(string question)
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            // Best approach would be to load the api key from env vars
+            var aiService = new OpenAiAssistantService("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");
+
+            var assistant = await aiService.GetAssistantById("asst_9J6JPoWQMJtkdjJ42TjgMVEB");
+
+            var thread = new ThreadModel
             {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+                thread_id = "thread_rcnSx008fFNSlMlZPtp7iZCm"
+            };
+
+            var message = await aiService.SendMsgToThread(question, "user", thread);
+
+            // Start the run operation
+            var status = await aiService.RunAssistant();
+
+            // Finally get the response from the assistant
+            var response = await aiService.GetResponseFromAssistant();
+
+            Console.WriteLine(response);
         }
     }
 }
